@@ -10,7 +10,7 @@ LIBS = -lm
 LLIBS = $(L)/libcs50.a
 
 # for memory-leak tests
-VALGRIND = valgrind --leak-check=full --show-leak-kinds=all
+VALGRIND = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
 .PHONY: all valgrind clean
 
@@ -24,15 +24,13 @@ crawler.o: $(L)/bag.h $(L)/file.h $(L)/hashtable.h $(L)/webpage.h ../common/page
 ../common/pagedir.o: ../common/pagedir.h ../common/pagedir.c
 	$(CC) $(CFLAGS) -c ../common/pagedir.c -o ../common/pagedir.o
 
-test: crawler
-	chmod +x testing.sh
-	./testing.sh > testing.out
-#bash -v testing.sh > testing.out
+test: ./crawler 
+	bash -v testing.sh > testing.out
 
-#valgrind:	crawler 
-valgrind: test
-	$(VALGRIND) http://cs50tse.cs.dartmouth.edu/tse/letters/ ./testing 2
-# ./testing.sh
+valgrind: ./crawler
+	$(VALGRIND) ./crawler http://cs50tse.cs.dartmouth.edu/tse/letters/ ./letters 0
+	$(VALGRIND) ./crawler http://cs50tse.cs.dartmouth.edu/tse/toscrape/ ./toscrape 0
+	$(VALGRIND) ./crawler http://cs50tse.cs.dartmouth.edu/tse/wikipedia/ ./wiki 0
 
 clean:
 	rm -f *~ *.o

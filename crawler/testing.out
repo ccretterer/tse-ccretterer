@@ -1,2 +1,20 @@
-
-No Arguments passed.
+\nNo Arguments passed.\n
+\nRandom Words.\n
+\nCorrect seed url but other wrong parameters.\n
+NULL/.crawler
+\nCorrect Seed URL and Page Directory, Wrong Depth\n
+\nWrong Seed URL, correct other parameters\n
+./testing/.crawler
+\nValgrind Test\n
+./testing/.crawler
+\nTesting Letters website\n
+./letters/.crawler
+./letters/.crawler
+./letters/.crawler
+./letters/.crawler
+\nTesting toscrape website\n
+./toscrape/.crawler
+./toscrape/.crawler
+\nTesting Wikipedia website\n
+./wiki/.crawler
+./wiki/.crawler
