@@ -41,4 +41,25 @@ bool pagedir_init(const char *pageDirectory);
  */
 void pagedir_save(const webpage_t *page, const char *pageDirectory, const int docID);
 
+
+/**************** pagedir_validate ***************/
+/* Validates that the given directory is a crawler-created directory by attempting to open the file ".crawler" within the directory.
+* We return:
+* True if the directory is a crawler-created directory, False otherwise.
+* Caller is responsible for:
+* Providing a valid directory path string.
+*/
+bool pagedir_validate(const char* directory);
+
+/**************** pagedir_load ***************/
+/* Loads a webpage from a file within the specified page directory, using the docID as the file name.
+* We return:
+* A pointer to a newly allocated webpage_t object with the contents of the file
+* NULL if an error occurs, such as failing to open the file, reading from the file, or allocating memory
+* Caller is responsible for freeing the returned webpage_t object when finished using it
+*/
+webpage_t* pagedir_load(const char* pageDirectory, int docID);
+
+
 #endif // __PAGEDIR_H
+

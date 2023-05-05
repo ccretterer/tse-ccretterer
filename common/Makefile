@@ -5,21 +5,28 @@
 L = ../libcs50
 
 CC = gcc
-CFLAGS = -Wall -pedantic -std=c11 -ggdb
+CFLAGS = -Wall -pedantic -std=c11 -ggdb -I..$L
 
-OBJS = pagedir.o
-LIBS = -lm
+OBJS = pagedir.o index.o word.o 
+LIB = common.a
+
+$(LIB): $(OBJS)
+	ar cr $(LIB) $(OBJS) 
 
 .PHONY: all clean
 
-all: pagedir
+all: $(LIB)
 
-pagedir: $(OBJS)
-	$(CC) $(CFLAGS) $^ $(LIBS) -o $@
+word.o: 	word.h
 
-pagedir.o: pagedir.c pagedir.h
+index.o: word.h index.h 
+	$(CC) $(CFLAGS) -I../libcs50 -L../libcs50 -lcs50 -c index.c ../libcs50/libcs50.a
+
+pagedir.o: pagedir.h
+	$(CC) $(CFLAGS) -I../libcs50 -L../libcs50 -lcs50 -c pagedir.c
 
 clean:
-	rm -f pagedir
+	rm -f $(LIB)
 	rm -f *~ *.o
 	rm -rf *.dSYM
+

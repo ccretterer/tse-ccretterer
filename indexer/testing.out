@@ -1,0 +1,13 @@
+make[1]: Entering directory '/thayerfs/home/f004gcs/cs50-dev/tse-ccretterer/indexer'
+gcc -Wall -pedantic -std=c11 -ggdb -I../libcs50 -I../common   -c -o indextest.o indextest.c
+gcc -Wall -pedantic -std=c11 -ggdb -I../libcs50 -I../common indextest.o ../common/common.a ../libcs50/libcs50.a  -o indextest
+make[1]: Leaving directory '/thayerfs/home/f004gcs/cs50-dev/tse-ccretterer/indexer'
+Test 1: Incorrect Parameters\n
+docID, 11
+Test 2: Using crawler created directory
+docID, 11
+docID, 75
+Test 3: Using Indextest
+Test 4: Valgrind
+docID, 11
+docID, 75
