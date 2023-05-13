@@ -1,5 +1,7 @@
 # Carly Retterer
 
+**Late Extension Used**
+
 ## Querier
 
 This program reads a text file created by the crawler and performs search queries.
