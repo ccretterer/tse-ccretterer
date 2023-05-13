@@ -1,0 +1,131 @@
+make[1]: Entering directory '/thayerfs/home/f004gcs/cs50-dev/tse-ccretterer/querier'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/thayerfs/home/f004gcs/cs50-dev/tse-ccretterer/querier'
+Test 1: Incorrect Parameters\n
+Error: incorrect parameters passed!
+Error: incorrect parameters passed!
+Error: incorrect parameters passed!
+Error: parameters are not created by indexer or crawler!
+Error: parameters are not created by indexer or crawler!
+Error: parameters are not created by indexer or crawler!
+Error: parameters are not created by indexer or crawler!
+Test 2: Using crawler created directory
+Query: Query: dog 
+--------------
+No documents match!
+--------------
+Query: Query: dog and cat 
+--------------
+No documents match!
+--------------
+Query: Query: first 
+--------------
+Document ID: 9
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+
+Document ID: 4
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+
+--------------
+Query: Query: first and dog 
+--------------
+No documents match!
+--------------
+Query: Query: first or dog 
+--------------
+Document ID: 9
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+
+Document ID: 4
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+
+--------------
+Query: Query: first or home 
+--------------
+Document ID: 9
+Score: 2
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+
+Document ID: 4
+Score: 2
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+
+Document ID: 3
+Score: 2
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+
+Document ID: 1
+Score: 2
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/
+
+Document ID: 10
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+
+Document ID: 8
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/F.html
+
+Document ID: 7
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/H.html
+
+Document ID: 6
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/G.html
+
+Document ID: 5
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+
+Document ID: 2
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+
+--------------
+Query: Query: home and first 
+--------------
+Document ID: 9
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+
+Document ID: 4
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+
+--------------
+Query: Query: and first 
+--------------
+Error: operator placed at beginning of query!
+--------------
+Query: Query: or first 
+--------------
+Error: operator placed at beginning of query!
+--------------
+Query: Query: or and or 
+--------------
+Error: operator placed at beginning of query!
+--------------
+Query: Query: dog and cat or first 
+--------------
+Document ID: 9
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+
+Document ID: 4
+Score: 1
+URL: The URL is: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+
+--------------
+Query: Test 3: Using fuzz query
+Error: incorrect parameters passed!
+Test 4: Valgrind
+Query: Query: dog and cat 
+--------------
+No documents match!
+--------------
+Query: Error: parameters are not created by indexer or crawler!

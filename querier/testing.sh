@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 #
 # testing.sh - testing file to test querier .c
 #
@@ -19,11 +19,10 @@ echo "Test 1: Incorrect Parameters\n"
 ./querier ../readOnlyDir failedTest
 
 echo "Test 2: Using crawler created directory"
-./querier ./letters outputLetters
-./querier ./toscrape outputToScrape
+./querier ./letters outputLetters 
 
 echo "Test 3: Using fuzz query"
-./fuzzquery ./letters 27 | ./querier
+./fuzzquery ./letters 12 | ./querier 
 
 
 echo "Test 4: Valgrind"

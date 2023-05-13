@@ -19,7 +19,6 @@ See the implementation spec for more details.
 # Assumptions
 
 All assumptions were based on design and requirements spec. 
-
 # Functionality 
 
 I wrote this program to have full functionality as decribed by the requirements spec. 

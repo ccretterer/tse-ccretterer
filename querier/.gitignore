@@ -32,6 +32,9 @@ Icon?
 
 ###########################################################################
 # custom additions below here; see also .gitignore files in subdirectories.
-set_iterate2
-test_index
-
+letters
+outputLetters
+querier.o
+querier
+testing1.out
+testinput.txt

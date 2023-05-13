@@ -27,12 +27,10 @@ querier.o: $(L)/counters.h $(L)/webpage.h $(C)/word.h $(C)/index.h  $(C)/pagedir
 
 
 test: ./querier
-	bash -v testing.sh > testing1.out
+	bash -v testing.sh > testing.out
 
 valgrind: ./querier
 	$(VALGRIND) valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./querier ./letters outputLetters
-# $(VALGRIND) valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./indexer ./toscrape outputToScrape
-# $(VALGRIND) valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./indextest ./outputLetters indexTestOutputLetters
 
 clean:
 	rm -f *~ *.o
